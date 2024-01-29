@@ -1,0 +1,7 @@
+.search-form {
+    display: flex;
+    justify-content: flex-end; /* Sağa hizalama */
+    margin-right: 50px; /* İstediğiniz boşluk miktarı */
+
+  }
+ 
