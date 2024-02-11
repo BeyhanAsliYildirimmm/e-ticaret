@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -17,9 +16,7 @@
 </head>
 <body>
     <!--HEADER------------->
-    <?php require_once "../controller/shopCotrol.php";?>
-
-
+<?php require_once "../controller/shopCotrol.php";?>
 <?php require_once "../includes/Header.php"; ?>
 <?php require_once "../includes/Slider.php"; ?>
  
@@ -28,7 +25,7 @@
         <h2 class="text-center">Ürün Listesi</h2>
         <hr>
         <div class="row">
-            
+
             <?php foreach ($products as $product) { ?>
                
                 <div class="card mb-3" style="width: 25rem; margin-left: 3rem;">

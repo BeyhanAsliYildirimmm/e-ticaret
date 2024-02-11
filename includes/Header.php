@@ -1,3 +1,18 @@
+<?php
+session_start();
+if(isset($_SESSION["shoppingCart"]))
+{
+    $shoppingCart=$_SESSION["shoppingCart"];
+    $total_count=$shoppingCart["summary"]["total_count"];
+   
+}
+else{
+  $total_count=0;
+}
+
+
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-0">
   <div class="container-fluid">
     <a href="../view/home.php" ><img alt="logo png" class="image" src="../assets/images/logo.png" style=" width:5rem;"></a>
@@ -20,31 +35,33 @@
       
     <div class="container">
   <form class="d-flex justify-content-start">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success ml-0" type="submit">Arama</button>
+    <div class="mb-3 w-75">
+      <select id="select2seachUrun" name="search" class="form-control select2" >
+          <option disabled selected hidden>Ürün adı giriniz...</option>
+      </select>
+    </div>
   </form>
 </div>
-     
-      <a href="../view/shopping-cart.php" class="position-relative">
+    
+<div style="margin-left=30px;"> 
+    
+      <a href="../view/shopping-cart.php" class="position-relative" style="margin-left:-70px;">
       <span class="bi bi-cart " style="font-size: 2rem;"></span>
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count" >0</span>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count" ><?php $total_count ?></span>
       </a>
-
-     
-
-      <div class="dropdown d-inline-block user-dropdown">
+      <div class="dropdown d-inline-block user-dropdown" style="margin-left:0px;" >
           <button type="button" class="btn header-item " id="page-header-user-dropdown"
              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="bi bi-person" style="font-size: 2rem;"></span>
+              <span class="bi bi-person " style="font-size: 2rem;"></span>
            </button>
             <div class="dropdown-menu dropdown-menu-end">
               <a class="dropdown-item" href="#"><i class="ri-user-line align-middle me-1"></i> Profil</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger" href="cikis.php"><i class="ri-shut-down-line align-middle me-1 text-danger"></i>Çıkış</a>
+              <a class="dropdown-item text-danger" href="../view/cikis.php"><i class="ri-shut-down-line align-middle me-1 text-danger"></i>Çıkış</a>
             </div>
       </div>
 
-
+</div>
   </div>
 </nav>
 

@@ -3,6 +3,7 @@ include "../modal/db.php";
 include "../modal/UserModal.php";
 
 $userModal = new UserModal();
+session_start();
 
 function loginControl() {
     global $userModal; // UserModal sınıfına erişim için global değişkeni kullanın
@@ -12,8 +13,8 @@ function loginControl() {
 
         if ($result) {
             // Dönen sonuç bir dizi olduğu için, bu diziyi istediğiniz şekilde işleyebilirsiniz.
-           
-                header('Location: ../view/index.php');
+            $_SESSION['user-login-id'] =$result['id'];
+            header('Location: ../view/index.php');
                 exit();
            
         } 
